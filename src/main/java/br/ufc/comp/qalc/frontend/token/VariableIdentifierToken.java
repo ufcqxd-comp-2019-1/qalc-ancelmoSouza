@@ -18,7 +18,9 @@ public class VariableIdentifierToken extends Token {
     public void interpretAttributes() {
         // TODO Se o lexema ainda existir e ainda não tiver sido interpretado, descartar o `$`.
         if(stringValue != null && stringValue.charAt(0) == '$'){
-            stringValue = stringValue.substring(1);
+            if(Character.isLetter(stringValue.charAt(1))){
+                stringValue = stringValue.substring(1);
+            }
         }
     }
 
@@ -28,4 +30,13 @@ public class VariableIdentifierToken extends Token {
         return "VARID";
     }
 
+    private boolean existDigit(){
+        int i = 1;
+        while(stringValue.charAt(i) != ';'){
+            if(Character.isDigit(stringValue.charAt(i)))
+                return true;
+            i++;
+        }
+        return false;
+    }
 }

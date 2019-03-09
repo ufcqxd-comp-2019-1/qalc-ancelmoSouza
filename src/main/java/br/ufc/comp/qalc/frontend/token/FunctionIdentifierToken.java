@@ -18,7 +18,7 @@ public class FunctionIdentifierToken extends Token {
     public void interpretAttributes() {
         if (stringValue != null && stringValue.charAt(0) == '@') {
             stringValue = stringValue.substring(1);
-        }
+    }
     }
 
     @Override

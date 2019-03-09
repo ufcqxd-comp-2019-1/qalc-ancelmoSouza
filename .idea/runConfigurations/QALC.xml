@@ -1,7 +1,9 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="QALC" type="Application" factoryName="Application" show_console_on_std_err="true" show_console_on_std_out="true">
+    <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-11.0.2" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <option name="MAIN_CLASS_NAME" value="br.ufc.comp.qalc.QALC" />
-    <module name="QALC" />
+    <module name="qalc-interpreter" />
     <option name="PROGRAM_PARAMETERS" value="-h" />
     <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
     <method v="2">

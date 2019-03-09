@@ -25,7 +25,6 @@ import java.io.OutputStream;
         parameterListHeading = "%nParâmetros:%n",
         optionListHeading = "%nOpções:%n"
 )
-//Comp
 public class QALC {
 
     @CommandLine.Option(
