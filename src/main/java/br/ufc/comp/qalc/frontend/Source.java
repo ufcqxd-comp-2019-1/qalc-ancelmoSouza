@@ -1,7 +1,5 @@
 package br.ufc.comp.qalc.frontend;
 
-import br.ufc.comp.qalc.ResourcesManager;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,7 +58,6 @@ public class Source {
 
         this.reader = new BufferedReader(new InputStreamReader(input));
 
-        ResourcesManager.manage(this.reader);
         advance();
     }
 

@@ -1,7 +1,6 @@
 package br.ufc.comp.qalc.report;
 
 import br.ufc.comp.qalc.OutputVerbosity;
-import br.ufc.comp.qalc.ResourcesManager;
 import br.ufc.comp.qalc.report.messages.Message;
 
 import java.io.IOException;
@@ -28,7 +27,8 @@ public class BasicReporter implements MessageConsumer {
      * @param stream Fluxo de saída a ser usado.
      */
     public BasicReporter(OutputStream stream) {
-        this(stream, OutputVerbosity.ESSENTIAL);
+        this.output = new OutputStreamWriter(stream);
+        this.verbosity = OutputVerbosity.ESSENTIAL;
     }
 
     /**
@@ -41,8 +41,6 @@ public class BasicReporter implements MessageConsumer {
     public BasicReporter(OutputStream stream, OutputVerbosity verbosity) {
         this.output = new OutputStreamWriter(stream);
         this.verbosity = verbosity;
-
-        ResourcesManager.manage(this.output);
     }
 
     /**

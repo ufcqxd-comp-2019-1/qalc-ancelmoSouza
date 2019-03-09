@@ -10,12 +10,6 @@ public class EOFToken extends Token {
     }
 
     @Override
-    public String toString() {
-        // NOTE: Não existe lexema associado, porém é o único token que não possui
-        return "";
-    }
-
-    @Override
     public String getTokenIdentifier() {
         return "%EOF%";
     }

@@ -31,17 +31,6 @@ public class NumberToken extends Token {
         }
     }
 
-    /**
-     * Obtém a representação do lexema deste token interpretada como um número.
-     *
-     * @return Valor numérico do lexema.
-     */
-    public double getNumericValue() {
-        interpretAttributes();
-
-        return numericValue;
-    }
-
     @Override
     public String getTokenIdentifier() {
         return "NUML";
