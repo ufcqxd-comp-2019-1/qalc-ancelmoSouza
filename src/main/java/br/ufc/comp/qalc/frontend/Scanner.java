@@ -69,7 +69,7 @@ public class Scanner {
             do{
                 lexeme.append(source.getCurrentChar());
                 source.advance();
-            }while(Character.isLetter(source.getCurrentChar()));
+            }while(Character.isLetter(source.getCurrentChar()) || Character.isDigit(source.getCurrentChar()));
             String stringValue = lexeme.toString();
 
             return new FunctionIdentifierToken(currentLine, lexemeStart, stringValue);
@@ -78,15 +78,17 @@ public class Scanner {
             StringBuilder lexeme = new StringBuilder();
             long currentLine = source.getCurrentLine();
             long lexemeStart = source.getCurrentColumn();
+
             do{
                 lexeme.append(source.getCurrentChar());
                 source.advance();
             }while(Character.isLetter(source.getCurrentChar()));
+            String stringValue = lexeme.toString();
 
             return  new VariableIdentifierToken(currentLine, lexemeStart, lexeme.toString());
         }
 
-        else if(source.getCurrentChar() == '$'  || source.getCurrentChar()=='?'){
+        else if(source.getCurrentChar() == '$'){
             StringBuilder lexeme = new StringBuilder();
             long currentLine = source.getCurrentLine();
             long lexemeStart = source.getCurrentColumn();
@@ -98,9 +100,10 @@ public class Scanner {
                 else{
                     isZero = 0;
                 }
+                
                 lexeme.append(source.getCurrentChar());
                 source.advance();
-            }while(Character.isLetter(source.getCurrentChar()) && (isZero < 2) );
+            }while(Character.isLetter(source.getCurrentChar()) && (isZero < 2) || source.getCurrentChar() == '?');
 
             return  new ResultIdentifierToken(currentLine, lexemeStart, lexeme.toString());
         }
